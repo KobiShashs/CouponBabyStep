@@ -1,0 +1,37 @@
+<p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button  *ngIf="isLoggedIn" mat-raised-button color="primary" [routerLink]="['/admin']" >Admin</button>
+      <button *ngIf="isLoggedIn" mat-raised-button color="primary" [routerLink]="['/customer']">Customer</button>
+      <button *ngIf="isLoggedIn" mat-raised-button color="primary" [routerLink]="['/company']">Company</button>
+      <ng-container *ngIf="isLoggedIn; else elseTemplate">
+        <button mat-raised-button color="warn">Logout</button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button mat-raised-button color="warn">Login</button>
+      </ng-template>
+      
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>star_border</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>sports</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>sports_rugby</mat-icon>
+      </button>
+
+
+    </mat-toolbar>
+  </p>

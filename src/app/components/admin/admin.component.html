@@ -1,0 +1,11 @@
+<mat-selection-list #actions [multiple]="false">
+    <mat-list-option *ngFor="let action of typesOfAction" [value]="action">
+      {{action}}
+    </mat-list-option>
+  </mat-selection-list>
+  
+  <p>
+    Option selected: {{actions.selectedOptions.selected[0]?.value}}
+  </p>
+
+<app-get-all-customers *ngIf="actions.selectedOptions.selected[0]?.value==='Get All Customers'"></app-get-all-customers>
